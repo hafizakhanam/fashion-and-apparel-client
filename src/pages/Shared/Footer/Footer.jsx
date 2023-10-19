@@ -5,7 +5,7 @@ const Footer = () => {
     let year = date.getFullYear();
     return (
         <footer className="py-8 bg-blue-950 text-center">
-            <p>© {year} Event by Rima</p>
+            <p>© {year} Fashion and Apparel by Rima</p>
         </footer>
     );
 };

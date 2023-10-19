@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
-const ServiceDetails = () => {
+const ProductDetails = () => {
     const cardsData = useLoaderData();
     const {id} = useParams();
     console.log(id, cardsData)
@@ -22,4 +22,4 @@ const ServiceDetails = () => {
     );
 };
 
-export default ServiceDetails;
+export default ProductDetails;

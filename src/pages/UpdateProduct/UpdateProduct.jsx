@@ -1,6 +1,6 @@
 
 
-const UpdateCoffee = () => {
+const UpdateProduct = () => {
     return (
         <div>
             Update
@@ -8,4 +8,4 @@ const UpdateCoffee = () => {
     );
 };
 
-export default UpdateCoffee;
+export default UpdateProduct;
