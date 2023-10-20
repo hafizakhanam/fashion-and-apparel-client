@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../providers/AuthProvider'
+import Swal from "sweetalert2";
 
 
 const Registration = () => {
@@ -35,7 +36,27 @@ const Registration = () => {
         setRegistrationSuccess('');
 
         createUser(email, password).then(result =>{
-            setRegistrationSuccess('Registration Successful');
+            const newUser = {email};
+            // send data to the server
+            fetch('http://localhost:5000/user', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                        })
+                }
+            })
         })
         .catch(error =>{
             setRegistrationErr(error.message);
