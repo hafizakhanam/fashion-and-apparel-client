@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/category')
+                loader: () => fetch('https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/category')
             },
             {
                 path: "/addProduct",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: "/category/:id",
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/category/${params.id}`)
             },
             {
                 path: "/addCategory",
@@ -39,12 +39,12 @@ const router = createBrowserRouter([
             {
                 path: "/product/:id",
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/product/${params.id}`)
             },
             {
                 path: "updateProduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/product/${params.id}`)
             },
             {
                 path: "/login",

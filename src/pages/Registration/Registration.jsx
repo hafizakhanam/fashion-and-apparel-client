@@ -38,7 +38,7 @@ const Registration = () => {
         createUser(email, password).then(result =>{
             const newUser = {email};
             // send data to the server
-            fetch('http://localhost:5000/user', {
+            fetch('https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
