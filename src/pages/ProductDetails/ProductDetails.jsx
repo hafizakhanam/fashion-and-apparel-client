@@ -9,7 +9,7 @@ const ProductDetails = () => {
             <AdvSlider></AdvSlider>
             <div className="py-40 bg-white">
                 <div className="max-w-[1340px] mx-auto px-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <img className="text-center rounded-lg w-full" src={productImage} alt="Image" />
                         <div className="p-8">
                             <button className="btn border border-white mb-6">Add to Cart</button>
