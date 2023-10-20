@@ -18,9 +18,7 @@ const OurStory = () => {
 
                             In this article, you’ll learn 3 story frameworks you can use on your eCommerce website.<br/><br/>
 
-                            These stories will help you connect with your prospects, differentiate your brand, and ultimately drive more sales of your products.</p><br/><br/>
-                       
-                        <button className="btn bg-blue-950 text-white mt-10"><Link to="/about">Learn More</Link></button>
+                            These stories will help you connect with your prospects, differentiate your brand, and ultimately drive more sales of your products.</p>
                     </div>
                     <div className="img">
                         <img data-aos="fade-right" className="rounded-lg" src="https://i.ibb.co/wBS5y9V/friendly-team.jpg" alt="Image" />
