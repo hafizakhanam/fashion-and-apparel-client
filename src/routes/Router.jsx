@@ -3,13 +3,14 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import ServiceDetails from "../pages/ProductDetails/ProductDetails";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import AddCategory from "../pages/AddCategory/AddCategory";
-import ProductByCategory from "../pages/ProductByCategory/ProductByCategory";
+import Products from "../pages/Products/Products";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
     {
@@ -27,13 +28,8 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
             },
             {
-                path: "/products",
-                element: <PrivateRoute><ProductByCategory></ProductByCategory></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/product')
-            },
-            {
                 path: "/category/:id",
-                element: <PrivateRoute><ProductByCategory></ProductByCategory></PrivateRoute>,
+                element: <PrivateRoute><Products></Products></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
@@ -41,9 +37,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddCategory></AddCategory></PrivateRoute>,
             },
             {
-                path: "/service/:id",
-                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: () => fetch('../card-data.json')
+                path: "/product/:id",
+                element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+            },
+            {
+                path: "updateProduct/:id",
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
             {
                 path: "/login",
