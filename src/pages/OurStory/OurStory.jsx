@@ -8,8 +8,18 @@ const OurStory = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="content">
                         <h2 className="text-blue-950 font-bold text-5xl mb-16">Our Story</h2>
-                        <p className="text-blue-950 text-justify">Event management for a musical show involves the planning, organization, and execution of a live music event or concert. Whether it's a small local gig, a large-scale music festival, or anything in between, successful event management is crucial for creating a memorable and enjoyable experience for both performers and attendees.</p><br/>
-                        <p className="text-blue-950 text-justify">Effective event management is essential for creating a successful musical show that leaves a lasting impression on both the performers and the audience. It requires careful planning, attention to detail, and the ability to adapt to unforeseen challenges that may arise during the event.</p>
+                        <p className="text-blue-950 text-justify">We all have. That’s because our brains become more active when we listen to stories.<br/><br/>
+
+                            By telling stories, we can even plant ideas, thoughts and emotions into people’s brains.<br/><br/>
+
+                            When it comes to making a purchase on your eCommerce website, a good story can make the difference between a potential customer becoming enchanted by your product and ignoring it altogether.<br/><br/>
+
+                            So, we need stories. But what type of stories should you include on your eCommerce website?<br/><br/>
+
+                            In this article, you’ll learn 3 story frameworks you can use on your eCommerce website.<br/><br/>
+
+                            These stories will help you connect with your prospects, differentiate your brand, and ultimately drive more sales of your products.</p><br/><br/>
+                       
                         <button className="btn bg-blue-950 text-white mt-10"><Link to="/about">Learn More</Link></button>
                     </div>
                     <div className="img">

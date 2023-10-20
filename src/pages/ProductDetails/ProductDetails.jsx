@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import AdvSlider from "../AdvSlider/AdvSlider";
 
 const ProductDetails = () => {
@@ -12,6 +12,7 @@ const ProductDetails = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <img className="text-center rounded-lg w-full" src={productImage} alt="Image" />
                         <div className="p-8">
+                            <button className="btn border border-white mb-6">Add to Cart</button>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Ratings: <span className="text-sm">{rating}</span></h2>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Name: <span className="text-sm">{productName}</span></h2>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Brand: <span className="text-sm">{brandName}</span></h2>
