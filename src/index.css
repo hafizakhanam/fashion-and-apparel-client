@@ -11,22 +11,6 @@ body {
     height: 500px !important;
     overflow: hidden !important;
 }
-
-.App {
-    /* Your common styles for both dark and light modes */
-  }
-  
-.App.dark {
-/* Dark mode styles */
-background-color: #333;
-color: #fff;
-}
-
-.App.light {
-/* Light mode styles */
-background-color: #fff;
-color: #333;
-}
   
   
   
