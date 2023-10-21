@@ -7,4 +7,5 @@
 2. User can Login
 3. User can add product
 4. User can update product
-5. Without Home page all routes are protected route
+5. User can add product to cart
+6. Without Home page all routes are protected route
