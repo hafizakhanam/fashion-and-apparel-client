@@ -19,7 +19,7 @@ const AddProduct = () => {
         console.log(newProduct);
 
         // send data to the server
-        fetch('https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/product', {
+        fetch('https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -65,8 +65,16 @@ const AddProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Brand Name</span>
                                 </label>
-                                <input type="text" name="brandName" className="input input-bordered w-full bg-white" />
+                                <select className="select select-bordered w-full bg-white" name="brandName">
+                                    <option>Levi's</option>
+                                    <option>H&M</option>
+                                    <option>ZARA</option>
+                                    <option>Gucci</option>
+                                    <option>Adidas</option>
+                                    <option>Nike</option>
+                                </select>
                             </div>
+                            
                             <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
                                     <span className="label-text">Product Type</span>

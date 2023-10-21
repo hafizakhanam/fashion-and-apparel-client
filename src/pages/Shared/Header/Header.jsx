@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -20,6 +21,9 @@ const Header = () => {
         </li>
         <li>
             <NavLink to="/addProduct">Add Product</NavLink>
+        </li>
+        <li>
+            <NavLink to="/cart"><FaShoppingCart/></NavLink>
         </li>
     </>
     return (

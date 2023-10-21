@@ -11,6 +11,7 @@ import AddCategory from "../pages/AddCategory/AddCategory";
 import Products from "../pages/Products/Products";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
+import Cart from "../pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/category')
+                loader: () => fetch('https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/category')
             },
             {
                 path: "/addProduct",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "/category/:id",
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/category/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/category/${params.id}`)
             },
             {
                 path: "/addCategory",
@@ -39,12 +40,16 @@ const router = createBrowserRouter([
             {
                 path: "/product/:id",
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/product/${params.id}`)
             },
             {
                 path: "updateProduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/product/${params.id}`)
+            },
+            {
+                path: "/cart",
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
             },
             {
                 path: "/login",

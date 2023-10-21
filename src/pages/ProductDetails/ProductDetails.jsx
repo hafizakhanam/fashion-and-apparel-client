@@ -1,9 +1,30 @@
-import { Link, useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 import AdvSlider from "../AdvSlider/AdvSlider";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
 
 const ProductDetails = () => {
     const productData = useLoaderData();
-    const { productImage, productName, brandName,  productType, productPrice, shortDes, rating} = productData;
+    const { _id, productImage, productName, brandName,  productType, productPrice, shortDes, rating} = productData;
+    const { user } = useContext(AuthContext);
+    
+
+    const handleAddToCart = () =>{
+        const uID = user.uid;
+        const cartData = {uID, productData}
+        
+        // send data to the server
+        fetch('https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(cartData)
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
     return (
         <div className="m-0">
             <AdvSlider></AdvSlider>
@@ -13,7 +34,7 @@ const ProductDetails = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <img className="text-center rounded-lg w-full" src={productImage} alt="Image" />
                         <div className="p-8">
-                            <button className="btn border border-white mb-6">Add to Cart</button>
+                            <button className="btn border border-white mb-6" onClick={handleAddToCart}>Add to Cart</button>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Ratings: <span className="text-sm">{rating}</span></h2>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Brand: <span className="text-sm">{brandName}</span></h2>
                             <h2 className="card-title text-lg font-semibold text-blue-950">Type: <span className="text-sm">{productType}</span></h2>

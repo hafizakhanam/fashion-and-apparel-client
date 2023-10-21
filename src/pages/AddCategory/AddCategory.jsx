@@ -14,7 +14,7 @@ const AddCategory = () => {
         console.log(newCategory);
 
         // send data to the server
-        fetch('https://fashion-and-apparel-server-e94mxv9e2-hafizas-projects.vercel.app/category', {
+        fetch('https://fashion-and-apparel-server-9j4ezqag8-hafizas-projects.vercel.app/category', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
